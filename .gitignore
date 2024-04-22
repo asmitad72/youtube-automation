@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Logs and databases
+logs/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Compiled binary files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*~
+
+# Environment variables
+.env
+
+# Visual Studio Code
+.vscode/
+
+# Cypress
+/cypress/screenshots/
+/cypress/videos/
+
+# Personal customization
+# Add any additional files or directories to ignore below this line
