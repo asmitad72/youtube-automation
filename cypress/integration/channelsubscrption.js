@@ -2,15 +2,12 @@ describe('YouTube Channel Navigation', () => {
   beforeEach(() => {
     // Open YouTube homepage
     cy.visit('https://www.youtube.com/');
-		//cy.get('.yt-spec-touch-feedback-shape__fill').click({ force: true });		
-		cy.get("Accept all").click()
   });
 
 	it('Accept cookies', () => {
-		cy.get('.yt-spec-touch-feedback-shape__fill').should("be.visible")
-		//cy.get('.yt-spec-touch-feedback-shape__fill').click();
-		
-
+        cy.get("body > ytd-app:nth-child(5) > ytd-consent-bump-v2-lightbox:nth-child(11) > tp-yt-paper-dialog:nth-child(1) > div:nth-child(4)").scrollTo('bottom');
+		cy.get("button[aria-label='Accept the use of cookies and other data for the purposes described']").should("be.visible")
+		cy.get("button[aria-label='Accept the use of cookies and other data for the purposes described']").click();
 	})
 
   it('Access YouTube Homepage', () => {
