@@ -1,0 +1,19 @@
+name: Cypress Run Test Manually Workflow
+'on':
+  workflow_dispatch: null
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run Cypress tests
+        run: npm test
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-snapshots
+          path: YoutubeAutomation/cypress/screenshots
+      
