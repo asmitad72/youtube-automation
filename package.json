@@ -6,7 +6,9 @@
   "scripts": {
     "test": "node_modules/.bin/cypress run",
     "headTest": "npm run test -- --headed",
-    "chromeTest": "npm run test -- --browser chrome"
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npm run test --record --key 04b2699e-ad9a-4e6c-801d-4211dc916ae3 --reporter mochawesome",
+    "integrationTest": "npm run test --spec \"cypress/integration/*\""
   },
   "author": "",
   "license": "ISC",
