@@ -1,0 +1,238 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-04-26T16:42:55.377Z",
+    "end": "2024-04-26T16:44:16.302Z",
+    "duration": 80925,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "de9bfef6-da3f-4e58-942f-08cdbf1ebd94",
+      "title": "",
+      "fullFile": "cypress/integration/channelsubscrption.js",
+      "file": "cypress/integration/channelsubscrption.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+          "title": "YouTube Channel Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Accept cookies",
+              "fullTitle": "YouTube Channel Navigation Accept cookies",
+              "timedOut": null,
+              "duration": 10732,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('body').then($body => {\n  if ($body.find('#dialog').length > 0) {\n    cy.get('#dialog > #content').scrollTo('bottom');\n    cy.get(':nth-child(1) > :nth-child(2) > yt-button-shape > .yt-spec-button-shape-next > yt-touch-feedback-shape > .yt-spec-touch-feedback-shape > .yt-spec-touch-feedback-shape__fill').click();\n  }\n});",
+              "err": {},
+              "uuid": "b4805056-e9f6-4790-ba35-e2d610bb53c9",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Access YouTube Homepage",
+              "fullTitle": "YouTube Channel Navigation Access YouTube Homepage",
+              "timedOut": null,
+              "duration": 5932,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should('eq', 'https://www.youtube.com/');",
+              "err": {},
+              "uuid": "ddd417d6-e547-40dd-b5ba-985def102c40",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search for Channel goldmines",
+              "fullTitle": "YouTube Channel Navigation Search for Channel goldmines",
+              "timedOut": null,
+              "duration": 23474,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"input[name='search_query']\").click().type('goldmines{enter}');\ncy.get(':nth-child(1) > #content-section > #info-section > #main-link > #info > #channel-title > #container > #text-container > #text').should('contain.text', 'Goldmines');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `:nth-child(1) > #content-section > #info-section > #main-link > #info > #channel-title > #container > #text-container > #text`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `:nth-child(1) > #content-section > #info-section > #main-link > #info > #channel-title > #container > #text-container > #text`, but never found it.\n    at Context.eval (webpack://youtubeautomation/./cypress/integration/channelsubscrption.js:32:144)",
+                "diff": null
+              },
+              "uuid": "c05d5b7d-1248-4c44-a9f1-9d3932c1dcc6",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search for Channel tseries",
+              "fullTitle": "YouTube Channel Navigation Search for Channel tseries",
+              "timedOut": null,
+              "duration": 4879,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"input[name='search_query']\").click().type('tseries{enter}');\ncy.get(':nth-child(2) > #content-section > #info-section > #main-link > #info > #channel-title > #container > #text-container > #text').should('contain.text', 'T-Series');",
+              "err": {},
+              "uuid": "f038d62e-aa18-4cb0-bd2b-59523e26236b",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select first Channel from Search Results",
+              "fullTitle": "YouTube Channel Navigation Select first Channel from Search Results",
+              "timedOut": null,
+              "duration": 5657,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"input[name='search_query']\").click().type('goldmines{enter}');\ncy.get('ytd-channel-renderer').find('#avatar-section').eq(0).click();",
+              "err": {},
+              "uuid": "014bb9eb-7deb-4473-add5-bf5890d03a88",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select second Channel from Search Results",
+              "fullTitle": "YouTube Channel Navigation Select second Channel from Search Results",
+              "timedOut": null,
+              "duration": 5510,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"input[name='search_query']\").click().type('goldmines{enter}');\ncy.get('ytd-channel-renderer').find('#avatar-section').eq(1).click();",
+              "err": {},
+              "uuid": "aaf9c4e9-7ca2-4f68-ace4-0dc22ef17e3f",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Channel Page",
+              "fullTitle": "YouTube Channel Navigation Verify Channel Page",
+              "timedOut": null,
+              "duration": 7175,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to a channel page (replace URL with actual channel page URL)\ncy.visit('https://www.youtube.com/@GoldminesTelefilms');\n// Verify channel details are displayed correctly\ncy.get('body > ytd-app:nth-child(4) > div:nth-child(6) > ytd-page-manager:nth-child(4) > ytd-browse:nth-child(1) > div:nth-child(3) > ytd-c4-tabbed-header-renderer:nth-child(1) > tp-yt-app-header-layout:nth-child(1) > div:nth-child(1) > tp-yt-app-header:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > ytd-channel-name:nth-child(1) > div:nth-child(1) > div:nth-child(1) > yt-formatted-string:nth-child(1)').should('contain.text', 'Goldmines');",
+              "err": {},
+              "uuid": "e93f010f-aa13-4c9d-b03f-ad2d1c6d2520",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Subscribe to the Channel",
+              "fullTitle": "YouTube Channel Navigation Subscribe to the Channel",
+              "timedOut": null,
+              "duration": 8346,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to a channel page (replace URL with actual channel page URL)\ncy.visit('https://www.youtube.com/@GoldminesTelefilms');\n// Click on the \"\"Subscribe\"\" button\ncy.get('#subscribe-button > .style-scope > yt-button-shape > .yt-spec-button-shape-next > yt-touch-feedback-shape > .yt-spec-touch-feedback-shape > .yt-spec-touch-feedback-shape__fill').click();\n//Verify subscribe button is clicked\ncy.get('ytd-modal-with-title-and-button-renderer.style-scope').should('exist').and('be.visible');\n//fail test case\n//cy.get('ytd-modal-with-title-and-button-renderer.style-scope').should('not.exist').and('not.be.visible');\n// Verify user is subscribed to the channel (add assertions as needed)",
+              "err": {},
+              "uuid": "cecde9d4-873f-4a54-b028-679997436036",
+              "parentUUID": "cff5cce9-df31-4037-8648-7a1de3ac7d44",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b4805056-e9f6-4790-ba35-e2d610bb53c9",
+            "ddd417d6-e547-40dd-b5ba-985def102c40",
+            "f038d62e-aa18-4cb0-bd2b-59523e26236b",
+            "014bb9eb-7deb-4473-add5-bf5890d03a88",
+            "aaf9c4e9-7ca2-4f68-ace4-0dc22ef17e3f",
+            "e93f010f-aa13-4c9d-b03f-ad2d1c6d2520",
+            "cecde9d4-873f-4a54-b028-679997436036"
+          ],
+          "failures": [
+            "c05d5b7d-1248-4c44-a9f1-9d3932c1dcc6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 71705,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
