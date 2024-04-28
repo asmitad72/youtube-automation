@@ -1,4 +1,4 @@
-name: Cypress Run Test Manually Workflow
+name: Cypress Run Test scheduled
 'on':
   schedule:
     - cron: '*/5 * * * *'
