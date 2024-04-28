@@ -1,7 +1,7 @@
 name: Cypress Run Test scheduled
 'on':
   schedule:
-    - cron: '*/5 * * * *'
+   # - cron: '*/5 * * * *'
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
