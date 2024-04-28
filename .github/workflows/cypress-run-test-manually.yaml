@@ -1,8 +1,6 @@
 name: Cypress Run Test Manually Workflow
 'on':
   workflow_dispatch: null
-  schedule:
-    - cron: '*/5 * * * *'
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
