@@ -11,11 +11,10 @@ jobs:
         run: npm install
       - name: Run Cypress tests
         run: npm test
+      - name: Run Cypress Tests on cypress Dashboard
+        run: npx cypress run --record --key 04b2699e-ad9a-4e6c-801d-4211dc916ae3
       - name: Upload screenshots
         uses: actions/upload-artifact@v3
         with:
           name: cypress-snapshots
           path: YoutubeAutomation/cypress/screenshots
-      -name: Run Cypress Tests on cypress Dashboard
-        run: npx cypress run --record --key 04b2699e-ad9a-4e6c-801d-4211dc916ae3
-      
