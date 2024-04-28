@@ -1,5 +1,5 @@
 name: Cypress Run Test Manually Workflow
-'on':
+on:
   workflow_dispatch: null
 jobs:
   cypress-run:
@@ -7,10 +7,16 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Run Cypress tests
-        run: npm test
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        continue-on-error: true
+        with:
+          browser: chrome
+          record: true
+          parallel: false
+        env:
+          CYPRESS_RECORD_KEY: '${{ secrets.CYPRESS_RECORD_KEY }}'
+
       - name: Upload screenshots
         uses: actions/upload-artifact@v3
         with:
